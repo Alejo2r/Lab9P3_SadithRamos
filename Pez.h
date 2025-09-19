@@ -6,7 +6,7 @@ private:
 	int nivelColor;
 
 public:
-	Pez(int nivelColor);
+	Pez(string nombre, int edad, int hambre, int vida,int nivelColor);
 
 	int getNivel();
 	void setNivel(int niv);

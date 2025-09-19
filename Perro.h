@@ -5,7 +5,7 @@ class Perro : public Mascota
 private:
 	int leal;
 public:
-	Perro(int leal);
+	Perro(string nombre, int edad, int hambre, int vida, int leal);
 
 	void setLeal(int);
 	int getLeal();

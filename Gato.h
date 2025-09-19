@@ -7,7 +7,7 @@ private:
 	int ind;
 
 public:
-	Gato(int ind);
+	Gato(string nombre, int edad, int hambre, int vida,int ind);
 
 	void setInd(int);
 	int getInd();

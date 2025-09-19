@@ -1,7 +1,7 @@
 #include "Pez.h"
-Pez::Pez(int nivel) :
+Pez::Pez(string nombre, int edad, int hambre, int vida, int nivelColor) :
 	Mascota(nombre, edad, hambre, vida) {
-	this->nivelColor = nivel;
+	this->nivelColor = nivelColor;
 }
 
 int Pez::getNivel() {

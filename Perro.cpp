@@ -1,5 +1,5 @@
 #include "Perro.h"
-Perro::Perro(int leal) :
+Perro::Perro(string nombre, int edad, int hambre, int vida, int leal) :
 	Mascota(nombre, edad, hambre, vida) {
 	this->leal = leal;
 }

@@ -1,5 +1,5 @@
 #include "Gato.h"
-Gato::Gato(int ind)
+Gato::Gato(string nombre, int edad, int hambre, int vida, int ind)
 	:Mascota(nombre, edad,  hambre, vida) {
 	this->ind = ind;
 }

@@ -1,19 +1,49 @@
-// Lab9P3_SadithRamos.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-//
-
 #include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <ctime>
+#include "Mascota.h"
+#include "Gato.h"
+#include "Perro.h"
+#include "Pez.h"
+using namespace std;
+void menu() {
+    int opc;
+    vector<Mascota*> mascotas;
+    do
+    {
+        cout << "1. Cargar Mascotas" << endl;
+        cout << "2. Listar Mascotas" << endl;
+        cout << "3. Crear Mascotas" << endl;
+        cout << "4. Alimentar Mascotas" << endl;
+        cout << "5. Pasear Mascotas" << endl;
+        cout << "6. Ver Estado Mascota" << endl;
+        cout << "7. Salir" << endl;
+        cin >> opc;
+        if (opc == 1) {
 
+        }else if (opc == 2) {
+
+        }else if (opc == 3) {
+
+        }else if (opc == 4) {
+
+        }else if (opc == 5) {
+
+        }else if (opc == 6) {
+
+        }else if (opc == 7) {
+            cout << "Saliendo...";
+        }
+        else
+        {
+            cout << "OPCION INVALIDA" << endl;
+        }
+    } while (opc != 7);
+    for (auto* m : mascotas) delete m;
+}
 int main()
 {
-    std::cout << "Hello World!\n";
+    srand(time(0));
+    menu();
 }
-
-// Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
-// Depurar programa: F5 o menú Depurar > Iniciar depuración
-
-// Sugerencias para primeros pasos: 1. Use la ventana del Explorador de soluciones para agregar y administrar archivos
-//   2. Use la ventana de Team Explorer para conectar con el control de código fuente
-//   3. Use la ventana de salida para ver la salida de compilación y otros mensajes
-//   4. Use la ventana Lista de errores para ver los errores
-//   5. Vaya a Proyecto > Agregar nuevo elemento para crear nuevos archivos de código, o a Proyecto > Agregar elemento existente para agregar archivos de código existentes al proyecto
-//   6. En el futuro, para volver a abrir este proyecto, vaya a Archivo > Abrir > Proyecto y seleccione el archivo .sln
