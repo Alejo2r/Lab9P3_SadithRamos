@@ -25,17 +25,24 @@ void Mascota::alimentar() {
 	{
 		cout << "La Mascota tiene vida maxima!" << endl;
 	}
+	if (this->vida > 100)
+		this->vida = 100;
 }
 void Mascota::pasear() {
 	if (this->vida > 0) {
-		setVida(this->vida + ((rand() % 10) + 5));
+		setVida(this->vida - ((rand() % 10) + 5));
 	}
 	else
 	{
 		cout << "La Mascota no tiene vida!" << endl;
 	}
-
-	setHambre(this->hambre + ((rand() % 10) + 10));
+	if (this->hambre < 100) {
+		setHambre(this->hambre + ((rand() % 10) + 10));
+	}
+	if (this->vida <= 0)
+		this->vida = 1;
+	if (this->hambre >= 100)
+		this->hambre = 100;
 }
 void Mascota::mostrarEstado() {
 	if (this->vida >= 30) {

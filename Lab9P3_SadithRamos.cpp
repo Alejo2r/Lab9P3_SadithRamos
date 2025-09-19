@@ -190,11 +190,64 @@ void menu() {
                 }
 
                 else if (opc == 4) {
+                    int num;
+                    for (int i = 0; i < mascotas.size(); i++)
+                    {
+                        cout << i << " " << mascotas.at(i)->getNombre() << endl;
+                    }
+                    do
+                    {
+                        cout << "Que mascota necesita?" << endl;
+                        cin >> num;
+                    } while (num >= mascotas.size());
 
+                    cout << "Hambre antes de alimentar: " << mascotas.at(num)->getHambre() << endl; 
+                    cout << "Vida antes de alimentar: " << mascotas.at(num)->getVida() << endl;
+                    mascotas.at(num)->alimentar();
+                    cout << " Hambre luego de alimentar: " << mascotas.at(num)->getHambre() << endl;
+                    cout << "Vida luego de alimentar: " << mascotas.at(num)->getVida() << endl;
+                    ofstream archivo(mascotas.at(num)->getNombre()+".txt", ios::app);
+                    archivo << "Alimentacion\n";
+                    if (dynamic_cast<Perro*>(mascotas.at(num))) {
+                        archivo << "Perro," << mascotas.at(num)->getNombre() << "," << mascotas.at(num)->getEdad() << "," << mascotas.at(num)->getHambre() << "," << mascotas.at(num)->getVida() << "," << dynamic_cast<Perro*>(mascotas.at(num))->getLeal() << endl;
+                    }
+                    if (dynamic_cast<Gato*>(mascotas.at(num))) {
+                        archivo << "Gato," << mascotas.at(num)->getNombre() << "," << mascotas.at(num)->getEdad() << "," << mascotas.at(num)->getHambre() << "," << mascotas.at(num)->getVida() << "," << dynamic_cast<Gato*>(mascotas.at(num))->getInd() << endl;
+                    }
+                    if (dynamic_cast<Pez*>(mascotas.at(num))) {
+                        archivo << "Pez," << mascotas.at(num)->getNombre() << "," << mascotas.at(num)->getEdad() << "," << mascotas.at(num)->getHambre() << "," << mascotas.at(num)->getVida() << "," << dynamic_cast<Pez*>(mascotas.at(num))->getNivel() << endl;
+                    }
+                    archivo.close();
                 }
 
                 else if (opc == 5) {
-
+                    int num;
+                    for (int i = 0; i < mascotas.size(); i++)
+                    {
+                        cout << i << " " << mascotas.at(i)->getNombre() << endl;
+                    }
+                    do
+                    {
+                        cout << "Que mascota necesita?" << endl;
+                        cin >> num;
+                    } while (num >= mascotas.size());
+                    cout << "Hambre antes de pasear: " << mascotas.at(num)->getHambre() << endl;
+                    cout << "Vida antes de paseat: " << mascotas.at(num)->getVida() << endl;
+                    mascotas.at(num)->pasear();
+                    cout << " Hambre luego de pasear: " << mascotas.at(num)->getHambre() << endl;
+                    cout << "Vida luego de pasear: " << mascotas.at(num)->getVida() << endl;
+                    ofstream archivo(mascotas.at(num)->getNombre() + ".txt", ios::app);
+                    archivo << "Pasear\n";
+                    if (dynamic_cast<Perro*>(mascotas.at(num))) {
+                        archivo << "Perro," << mascotas.at(num)->getNombre() << "," << mascotas.at(num)->getEdad() << "," << mascotas.at(num)->getHambre() << "," << mascotas.at(num)->getVida() << "," << dynamic_cast<Perro*>(mascotas.at(num))->getLeal() << endl;
+                    }
+                    if (dynamic_cast<Gato*>(mascotas.at(num))) {
+                        archivo << "Gato," << mascotas.at(num)->getNombre() << "," << mascotas.at(num)->getEdad() << "," << mascotas.at(num)->getHambre() << "," << mascotas.at(num)->getVida() << "," << dynamic_cast<Gato*>(mascotas.at(num))->getInd() << endl;
+                    }
+                    if (dynamic_cast<Pez*>(mascotas.at(num))) {
+                        archivo << "Pez," << mascotas.at(num)->getNombre() << "," << mascotas.at(num)->getEdad() << "," << mascotas.at(num)->getHambre() << "," << mascotas.at(num)->getVida() << "," << dynamic_cast<Pez*>(mascotas.at(num))->getNivel() << endl;
+                    }
+                    archivo.close();
                 }
 
                 else if (opc == 6) {
@@ -203,8 +256,11 @@ void menu() {
                     {
                         cout << i << " " << mascotas.at(i)->getNombre() << endl;
                     }
-                    cout << "Que mascota necesita ver?" << endl;
-                    cin >> num;
+                    do
+                    {
+                        cout << "Que mascota necesita?" << endl;
+                        cin >> num;
+                    } while (num >= mascotas.size());
                     mascotas.at(num)->mostrarEstado();
                 }
 

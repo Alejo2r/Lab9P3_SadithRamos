@@ -1,0 +1,2 @@
+Alimentacion
+Gato,mario,12,95,100,100
